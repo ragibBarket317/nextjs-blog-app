@@ -3,21 +3,36 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #ffffff; /* Light background */
+  --color-text: #000000; /* Light text */
+  --color-primary: #1d4ed8; /* Light primary color */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light {
+  --color-bg: #000000; /* Dark background */
+  --color-text: #ffffff; /* Dark text */
+  --color-primary: #1d4ed8; /* Dark primary color */
 }
 
+.dark {
+  --color-bg: #1a202c; /* Dark background */
+  --color-text: #ffffff; /* Dark text */
+  --color-primary: #3b82f6; /* Dark primary color */
+}
+
+/* Apply the colors globally */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: var(--color-text);
 }
 
 @layer utilities {
