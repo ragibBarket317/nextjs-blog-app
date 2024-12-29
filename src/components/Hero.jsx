@@ -8,7 +8,7 @@ const Hero = () => {
         <h1 className="text-[60px] mt-24">
           <b>Hey, Ragib Barket here!</b> Discover my stories and creative ideas.
         </h1>
-        <div className="my-8 flex gap-5">
+        <div className="my-8 flex gap-10">
           <div className="w-1/2">
             <Image
               src="/culture.png"
