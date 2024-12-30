@@ -1,4 +1,6 @@
 import React from 'react'
+import Categories from './Categories'
+import EditorsPick from './EditorsPick'
 
 const MostPopularPost = () => {
   return (
@@ -59,6 +61,9 @@ const MostPopularPost = () => {
           </div>
         </div>
       </div>
+      {/* Categories */}
+      <Categories />
+      <EditorsPick />
     </div>
   )
 }

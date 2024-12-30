@@ -5,19 +5,19 @@
 :root {
   --color-bg: #ffffff; /* Light background */
   --color-text: #000000; /* Light text */
-  --color-primary: #1d4ed8; /* Light primary color */
+  --color-primary: #3b3b3b; /* Light primary color */
 }
 
 .light {
   --color-bg: #000000; /* Dark background */
   --color-text: #ffffff; /* Dark text */
-  --color-primary: #1d4ed8; /* Dark primary color */
+  --color-primary: #3b3b3b; /* Dark primary color */
 }
 
 .dark {
   --color-bg: #1a202c; /* Dark background */
   --color-text: #ffffff; /* Dark text */
-  --color-primary: #3b82f6; /* Dark primary color */
+  --color-primary: #c5c5c5; /* Dark primary color */
 }
 
 /* Apply the colors globally */
@@ -33,6 +33,17 @@ a {
 button {
   background-color: var(--color-primary);
   color: var(--color-text);
+}
+.ql-container {
+  font-size: 18px !important;
+}
+/* .ql-tooltip,
+.ql-hidden {
+  display: none !important;
+} */
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  color: var(--primary-text);
 }
 
 @layer utilities {

@@ -1,17 +1,13 @@
-'use client'
-
-import { useContext } from 'react'
-import { ThemeContext } from '@/context/ThemeContext'
+import Link from 'next/link'
+import DarkModeButton from './DarkModeButton'
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useContext(ThemeContext)
-
   return (
     <header className="bg-white dark:bg-[#1a202c]">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="#">
+            <Link className="block text-teal-600" href="/">
               <span className="sr-only">Home</span>
               <svg
                 className="h-8"
@@ -24,90 +20,63 @@ export default function Navbar() {
                   fill="currentColor"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:block">
             <nav aria-label="Global">
-              <ul className="flex items-center gap-6 text-sm">
+              <ul className="flex items-center justify-center gap-6 text-sm">
                 <li>
-                  <a
+                  <Link
                     className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    About{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Careers{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    History{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Services{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {' '}
-                    Projects{' '}
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
-                    href="#"
+                    href="/blog"
                   >
                     {' '}
                     Blog{' '}
-                  </a>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
+                    href="/about"
+                  >
+                    {' '}
+                    About{' '}
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
+                    href="/write"
+                  >
+                    {' '}
+                    Write{' '}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className="text-gray-500 dark:text-gray-200 transition hover:text-gray-500/75"
+                    href="/contact"
+                  >
+                    {' '}
+                    Contact{' '}
+                  </Link>
                 </li>
               </ul>
             </nav>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <a
+            <div className="sm:flex sm:items-center sm:gap-4">
+              <DarkModeButton />
+              <Link
                 className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="#"
+                href="/login"
               >
                 Login
-              </a>
-
-              <button
-                onClick={toggleTheme}
-                className="p-2 bg-gray-300 dark:bg-gray-700 text-black dark:text-white rounded"
-              >
-                {theme === 'light' ? 'Light' : 'Dark'}
-              </button>
+              </Link>
             </div>
 
             <div className="block md:hidden">
