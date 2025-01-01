@@ -9,6 +9,8 @@ const WritePage = () => {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState('')
 
+  console.log(value)
+
   return (
     <div>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -62,12 +64,23 @@ const WritePage = () => {
                 </button>
               </span>
             )}
+            <div className="my-5">
+              <select className="text-[18px] font-bold bg-transparent py-2 outline-none dark:text-gray-500">
+                <option value="">Select your category</option>
+                <option value="style">Style</option>
+                <option value="fashion">Fashion</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="culture">Culture</option>
+                <option value="coding">Coding</option>
+              </select>
+            </div>
             <ReactQuill
               theme="bubble"
               value={value}
               onChange={setValue}
               placeholder="Tell your story"
-              className="text-[28px] "
+              className="text-[28px]"
             />
           </div>
           <button className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow absolute top-3 right-5">
